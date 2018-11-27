@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "electron": "^3.0.10",
-    "mdbootstrap": "^4.5.15"
+    "electron": "^3.0.10"
   }
 }
