@@ -1,12 +1,13 @@
 var Datastore = require('nedb');
 
-var db = new Datastore({filename : 'users'});
+var db = new Datastore({filename : 'users', autoload:true});
 
-db.loadDatabase();
+db.remove({},{multi: true});
 
-db.insert({word:"hello", translation: ['привет']});
-db.insert({word:'go', translation:['идти', 'прогуливаться']});
+db.find({}, (err, data) => {
+    if(err) console.log(err.message);
 
-db.find({word: 'go'}, function (err, docs) {
-    console.log(docs);
+    console.log(data);
 });
+
+
